@@ -74,7 +74,7 @@ export default function SignInModal() {
           <Input
             type='email'
             placeholder={intl.formatMessage({
-              id: 'emailAddressPlaceholder',
+              id: ' ',
               defaultMessage: 'Email Address.',
             })}
             value={email}
@@ -88,8 +88,8 @@ export default function SignInModal() {
           <Input
             type='password'
             placeholder={intl.formatMessage({
-              id: 'passwordPlaceholder',
-              defaultMessage: 'Password (min 6 characters)',
+              id: ' ',
+              defaultMessage: 'Password',
             })}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
