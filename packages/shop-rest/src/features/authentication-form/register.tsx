@@ -30,6 +30,16 @@ export default function SignOutModal() {
     });
   };
 
+  // TODO: Implement firebase register using email and password.
+  const userRegisterCallback = () => {
+    console.log("Form register button clicked");
+  }
+
+  // TODO: Implement firebase google register.
+  const googleRegisterCallback = () => {
+    console.log("Google register button clicked");
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -77,7 +87,7 @@ export default function SignOutModal() {
             </a>
           </Link>
         </HelperText>
-        <Button variant='primary' size='big' width='100%' type='submit'>
+        <Button variant='primary' size='big' width='100%' type='submit' onClick={userRegisterCallback}>
           <FormattedMessage id='continueBtn' defaultMessage='Continue' />
         </Button>
         <Divider>
@@ -85,7 +95,7 @@ export default function SignOutModal() {
             <FormattedMessage id='orText' defaultMessage='or' />
           </span>
         </Divider>
-        <Button
+        {/*<Button
           variant='primary'
           size='big'
           style={{
@@ -101,11 +111,12 @@ export default function SignOutModal() {
             id='continueFacebookBtn'
             defaultMessage='Continue with Facebook'
           />
-        </Button>
+        </Button>*/}
         <Button
           variant='primary'
           size='big'
           style={{ width: '100%', backgroundColor: '#4285f4' }}
+          onclick={googleRegisterCallback}
         >
           <IconWrapper>
             <Google />

@@ -54,6 +54,7 @@ export default function ForgotPasswordModal() {
           size='big'
           style={{ width: '100%' }}
           type='submit'
+          onClick={toggleSignInForm}
         >
           <FormattedMessage
             id='resetPasswordBtn'

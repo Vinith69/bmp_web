@@ -37,6 +37,8 @@ export default function SignInModal() {
     });
   };
 
+  /// Login using email and password.
+  /// TODO: Implement firebase email and pass login.
   const loginCallback = () => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('access_token', `${email}.${password}`);
@@ -44,6 +46,16 @@ export default function SignInModal() {
       closeModal();
     }
   };
+  /// Google login.
+  /// TODO: Implement firebase google login.
+  const googleLoginCallback = () => {
+    if (typeof window !== 'undefined') {
+      //localStorage.setItem('access_token', `${email}.${password}`);
+      authDispatch({ type: 'SIGNIN_SUCCESS' });
+      closeModal();
+    }
+  };
+
 
   return (
     <Wrapper>
@@ -102,7 +114,7 @@ export default function SignInModal() {
           </span>
         </Divider>
 
-        <Button
+        {/*<Button
           variant='primary'
           size='big'
           style={{
@@ -119,20 +131,20 @@ export default function SignInModal() {
             id='continueFacebookBtn'
             defaultMessage='Continue with Facebook'
           />
-        </Button>
+        </Button>*/}
 
         <Button
           variant='primary'
           size='big'
           style={{ width: '100%', backgroundColor: '#4285f4' }}
-          onClick={loginCallback}
+          onClick={googleLoginCallback}
         >
           <IconWrapper>
             <Google />
           </IconWrapper>
           <FormattedMessage
             id='continueGoogleBtn'
-            defaultMessage='Continue with Google'
+            defaultMessage='Continue with Googl'
           />
         </Button>
 
