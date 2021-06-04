@@ -27,6 +27,8 @@ type SettingsContentProps = {
 const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
   const { state, dispatch } = useContext(ProfileContext);
 
+  // console.log(state);
+
   const handleChange = (e) => {
     const { value, name } = e.target;
     dispatch({
@@ -36,8 +38,8 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
   };
 
   const handleSave = async () => {
-    const { firstName,lastName, email } = state;
-    console.log(firstName,lastName, email, 'firstName,lastName, email');
+    const { firstName, lastName, email } = state;
+    console.log(firstName, lastName, email, 'firstName,lastName, email');
   };
 
   return (
@@ -55,13 +57,14 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
           <Col xs={12} sm={5} md={5} lg={5}>
             <Label>
               <FormattedMessage
-                id='profileNamField'
+                id='profileFirstNameField'
                 defaultMessage='First Name'
               />
             </Label>
             <Input
               type='text'
               label='firstName'
+              placeholder="Enter Your Firstname"
               name='firstName'
               value={state.firstName}
               onChange={handleChange}
@@ -73,13 +76,14 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
           <Col xs={12} sm={5} md={5} lg={5}>
             <Label>
               <FormattedMessage
-                id='profileNamField'
+                id='profileLastNameField'
                 defaultMessage='Last Name'
               />
             </Label>
             <Input
               type='text'
               label='lastName'
+              placeholder="Enter Your Lastname"
               name='lastName'
               value={state.lastName}
               onChange={handleChange}
@@ -99,6 +103,7 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
               type='email'
               name='email'
               label='Email Address'
+              placeholder="Enter Your Email"
               value={state.email}
               onChange={handleChange}
               backgroundColor='#F7F7F7'
