@@ -36,8 +36,8 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
   };
 
   const handleSave = async () => {
-    const { name, email } = state;
-    console.log(name, email, 'name, email');
+    const { firstName,lastName, email } = state;
+    console.log(firstName,lastName, email, 'firstName,lastName, email');
   };
 
   return (
@@ -55,15 +55,33 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
           <Col xs={12} sm={5} md={5} lg={5}>
             <Label>
               <FormattedMessage
-                id='profileNameField'
-                defaultMessage='Your Name'
+                id='profileNamField'
+                defaultMessage='First Name'
               />
             </Label>
             <Input
               type='text'
-              label='Name'
-              name='name'
-              value={state.name}
+              label='firstName'
+              name='firstName'
+              value={state.firstName}
+              onChange={handleChange}
+              backgroundColor='#F7F7F7'
+              height='48px'
+            />
+          </Col>
+
+          <Col xs={12} sm={5} md={5} lg={5}>
+            <Label>
+              <FormattedMessage
+                id='profileNamField'
+                defaultMessage='Last Name'
+              />
+            </Label>
+            <Input
+              type='text'
+              label='lastName'
+              name='lastName'
+              value={state.lastName}
               onChange={handleChange}
               backgroundColor='#F7F7F7'
               height='48px'
