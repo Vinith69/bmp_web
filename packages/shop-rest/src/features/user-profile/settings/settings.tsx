@@ -42,6 +42,10 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
     console.log(firstName, lastName, email, 'firstName,lastName, email');
   };
 
+  const handlePasswordReset = async () => {
+
+  };
+
   return (
     <SettingsForm>
       <SettingsFormContent>
@@ -110,16 +114,23 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
             />
           </Col>
 
-          <Col xs={12} sm={2} md={2} lg={2}>
+          {/* Padding right */}
+          <Col xs={12} sm={2} md={2} lg={5}>
+
+          </Col>
+
+          <Col xs={12} sm={2} md={2} lg={3}>
             <Button size='big' style={{ width: '100%' }} onClick={handleSave}>
               <FormattedMessage id='profileSaveBtn' defaultMessage='Save' />
             </Button>
           </Col>
 
-          {/* Padding */}
-          <Col xs={12} sm={2} md={2} lg={2}>
+          {/* Padding right */}
+          <Col xs={12} sm={2} md={2} lg={5}>
 
           </Col>
+
+
 
           <Col xs={12} sm={5} md={5} lg={5}>
             <Label>
@@ -159,8 +170,8 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
             />
           </Col>
 
-          <Col xs={12} sm={2} md={2} lg={2}>
-            <Button size='big' style={{ width: '100%' }} onClick={handleSave}>
+          <Col xs={12} sm={2} md={3} lg={3}>
+            <Button size='big' style={{ width: '100%' }} onClick={handlePasswordReset}>
               <FormattedMessage id='profileResetBtn' defaultMessage='Reset Password' />
             </Button>
           </Col>
