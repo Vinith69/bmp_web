@@ -40,6 +40,8 @@ const Row = styled(Rows)`
 `;
 
 const Col = styled(Cols)`
+  margin-bottom:10px;
+
   @media only screen and (min-width: 0em) and (max-width: 47.99em) {
     margin-bottom: 20px;
 
