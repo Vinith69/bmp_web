@@ -14,6 +14,8 @@ import {
 import Progress from 'components/progress-box/progress-box';
 import { CURRENCY } from 'utils/constant';
 import { FormattedMessage } from 'react-intl';
+import { Button } from 'components/button/button';
+import { variant } from 'styled-system';
 
 type OrderDetailsProps = {
   tableData?: any;
@@ -90,6 +92,11 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({
               {grandTotal}
             </Price>
           </PriceRow>
+
+          <Button variant={"outlinedCancelOrder"} size='big' style={{ width: '100%' }} onClick={() => { console.log("sd") }}>
+            <FormattedMessage id='cancelOrder' defaultMessage='Cancel Order' />
+          </Button>
+
         </CostCalculation>
       </DeliveryInfo>
 
@@ -104,7 +111,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({
           rowKey={(record) => record.id}
           components={components}
           className="orderDetailsTable"
-          // scroll={{ y: 350 }}
+        // scroll={{ y: 350 }}
         />
       </OrderTableWrapper>
     </>

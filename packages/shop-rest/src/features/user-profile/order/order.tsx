@@ -24,6 +24,7 @@ import useComponentSize from 'utils/useComponentSize';
 import { FormattedMessage } from 'react-intl';
 import useOrders from 'data/use-orders';
 import ErrorMessage from 'components/error-message/error-message';
+import { Button } from 'components/button/button';
 
 const progressData = ['Order Received', 'Order On The Way', 'Order Delivered'];
 
@@ -132,6 +133,9 @@ const OrdersContent: React.FC<{}> = () => {
             />
           </Title>
           {selection && (
+            <>
+          
+            
             <OrderDetails
               progressStatus={selection.status}
               progressData={progressData}
@@ -143,6 +147,9 @@ const OrdersContent: React.FC<{}> = () => {
               tableData={selection.products}
               columns={orderTableColumns}
             />
+            
+          
+          </>
           )}
         </OrderDetailsWrapper>
       </DesktopView>

@@ -116,13 +116,13 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
             </Button>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
             <SettingsFormContent>
               <Contact />
             </SettingsFormContent>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col xs={12} sm={12} md={12} lg={12} style={{ position: 'relative' }}>
             <SettingsFormContent>

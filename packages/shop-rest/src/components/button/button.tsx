@@ -40,6 +40,18 @@ export const StyledButton = styled.button(
   },
   variant({
     variants: {
+      outlinedCancelOrder: {
+        color: 'red',
+        bg: 'white',
+        border: '1px solid',
+        borderColor: 'gray.700',
+        '&:hover': {
+          borderColor: 'red',
+          color: 'red',
+          bg: 'white',
+        },
+      },
+
       outlined: {
         color: 'primary.regular',
         bg: 'white',
@@ -128,7 +140,7 @@ const Spinner = styled.div`
   border: 3px solid #ffffff;
   border-top: 3px solid
     ${(props) =>
-      props.color ? props.color : themeGet('primary.regular', '#009E7F')};
+    props.color ? props.color : themeGet('primary.regular', '#009E7F')};
   border-radius: 50%;
   transition-property: transform;
   animation-name: ${rotate};
