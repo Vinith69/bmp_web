@@ -25,6 +25,7 @@ import { GlobalStyle } from 'assets/styles/global.style';
 import { messages } from 'site-settings/site-translation/messages';
 import 'typeface-lato';
 import 'typeface-poppins';
+import { ProvideAuth } from '../../utils/auth';
 // need to provide types
 export default function ExtendedApp({ Component, pageProps }) {
   const mobile = useMedia('(max-width: 580px)');
@@ -36,6 +37,7 @@ export default function ExtendedApp({ Component, pageProps }) {
         <CartProvider>
           <AppProvider>
             <AuthProvider>
+              
               <AppLayout>
                 <Component
                   {...pageProps}
@@ -43,6 +45,7 @@ export default function ExtendedApp({ Component, pageProps }) {
                 />
               </AppLayout>
               <GlobalStyle />
+              
             </AuthProvider>
           </AppProvider>
         </CartProvider>

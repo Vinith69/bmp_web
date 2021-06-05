@@ -19,9 +19,14 @@ import { AuthContext } from 'contexts/auth/auth.context';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { closeModal } from '@redq/reuse-modal';
 import { Input } from 'components/forms/input';
+
+import firebase from "firebase/app";
+import 'firebase/auth';
+
 export default function SignInModal() {
   const intl = useIntl();
-  const { authDispatch } = useContext<any>(AuthContext);
+  const { auth, authDispatch } = useContext<any>(AuthContext);
+  //const { auth } = useContext<any>(auth);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -41,9 +46,27 @@ export default function SignInModal() {
   /// TODO: Implement firebase email and pass login.
   const loginCallback = () => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('access_token', `${email}.${password}`);
-      authDispatch({ type: 'SIGNIN_SUCCESS' });
-      closeModal();
+      console.log("Dare login?");
+      auth.signin(email, password).then(() => {
+          localStorage.setItem('access_token', `${email}.${password}`);
+          authDispatch({ type: 'SIGNIN_SUCCESS' });
+          //closeModal();
+            //router.push('/deals');
+        })
+        .catch((error) => {
+            /*toast({
+                title: 'An error occurred.',
+                description: error.message,
+                status: 'error',
+                duration: 9000,
+                isClosable: true
+            });*/
+        });
+      
+      
+        //authDispatch({ type: 'SIGNIN_SUCCESS' });
+        closeModal();
+      
     }
   };
   /// Google login.
@@ -56,7 +79,7 @@ export default function SignInModal() {
     }
   };
 
-
+  
   return (
     <Wrapper>
       <Container>
