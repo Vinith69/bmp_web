@@ -115,6 +115,55 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
               <FormattedMessage id='profileSaveBtn' defaultMessage='Save' />
             </Button>
           </Col>
+
+          {/* Padding */}
+          <Col xs={12} sm={2} md={2} lg={2}>
+
+          </Col>
+
+          <Col xs={12} sm={5} md={5} lg={5}>
+            <Label>
+              <FormattedMessage
+                id='profileNewPasswordField'
+                defaultMessage='New Password'
+              />
+            </Label>
+            <Input
+              type='password'
+              label='password'
+              placeholder="Enter New Password"
+              name='password'
+              value={state.password}
+              onChange={handleChange}
+              backgroundColor='#F7F7F7'
+              height='48px'
+            />
+          </Col>
+
+          <Col xs={12} sm={5} md={5} lg={5}>
+            <Label>
+              <FormattedMessage
+                id='profileConfirmPasswordField'
+                defaultMessage='Confirm Password'
+              />
+            </Label>
+            <Input
+              type='password'
+              label='confirmPassword'
+              placeholder="Enter New Password"
+              name='ConfirmPassword'
+              value={state.confirmPassword}
+              onChange={handleChange}
+              backgroundColor='#F7F7F7'
+              height='48px'
+            />
+          </Col>
+
+          <Col xs={12} sm={2} md={2} lg={2}>
+            <Button size='big' style={{ width: '100%' }} onClick={handleSave}>
+              <FormattedMessage id='profileResetBtn' defaultMessage='Reset Password' />
+            </Button>
+          </Col>
         </Row>
         {/* <Row>
           <Col xs={12} sm={12} md={12} lg={12}>

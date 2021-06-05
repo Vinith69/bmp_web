@@ -134,22 +134,18 @@ const OrdersContent: React.FC<{}> = () => {
           </Title>
           {selection && (
             <>
-          
-            
-            <OrderDetails
-              progressStatus={selection.status}
-              progressData={progressData}
-              address={selection.deliveryAddress}
-              subtotal={selection.subtotal}
-              discount={selection.discount}
-              deliveryFee={selection.deliveryFee}
-              grandTotal={selection.amount}
-              tableData={selection.products}
-              columns={orderTableColumns}
-            />
-            
-          
-          </>
+              <OrderDetails
+                progressStatus={selection.status}
+                progressData={progressData}
+                address={selection.deliveryAddress}
+                subtotal={selection.subtotal}
+                discount={selection.discount}
+                deliveryFee={selection.deliveryFee}
+                grandTotal={selection.amount}
+                tableData={selection.products}
+                columns={orderTableColumns}
+              />
+            </>
           )}
         </OrderDetailsWrapper>
       </DesktopView>
