@@ -43,7 +43,8 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
   };
 
   const handlePasswordReset = async () => {
-
+    const { password, confirmPassword } = state;
+    console.log(password, confirmPassword, 'pass and confirm ');
   };
 
   return (
@@ -161,8 +162,8 @@ const SettingsContent: React.FC<SettingsContentProps> = ({ deviceType }) => {
             <Input
               type='password'
               label='confirmPassword'
-              placeholder="Enter New Password"
-              name='ConfirmPassword'
+              placeholder="Enter Password Again"
+              name='confirmPassword'
               value={state.confirmPassword}
               onChange={handleChange}
               backgroundColor='#F7F7F7'
