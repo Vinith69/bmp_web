@@ -93,7 +93,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({
             </Price>
           </PriceRow>
 
-          {progressStatus !== 3 && (<Button variant={"outlinedCancelOrder"} size='big' style={{ width: '100%' }} onClick={() => { console.log(progressStatus) }}>
+          {progressStatus === 2 && (<Button variant={"outlinedCancelOrder"} size='big' style={{ width: '100%' }} onClick={() => { console.log(progressStatus) }}>
             <FormattedMessage id='cancelOrder' defaultMessage='Cancel Order' />
           </Button>)}
 
