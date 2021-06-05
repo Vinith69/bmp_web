@@ -144,7 +144,7 @@ export default function SignInModal() {
           </IconWrapper>
           <FormattedMessage
             id='continueGoogleBtn'
-            defaultMessage='Continue with Googl'
+            defaultMessage='Continue with Google'
           />
         </Button>
 

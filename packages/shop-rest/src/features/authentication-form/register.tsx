@@ -45,7 +45,7 @@ export default function SignOutModal() {
     });
   };
 
-  // TODO: Implement firebase register using email and password.
+  // TODO: Implement firebase P using email and password.
   const userRegisterCallback = () => {
     console.log("Form register button clicked");
   }
@@ -55,7 +55,7 @@ export default function SignOutModal() {
     console.log("Google register button clicked");
   }
 
-  // TODO: Format message for different languages.
+  // TODO: FormattedMessage for different languages.
   return (
     <Wrapper>
       <Container>
